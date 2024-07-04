@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>   
+    <section class="hero">
+        <div class="mySlides">
+            <div class="numbertext">1 / 3</div>
+            <div class="image-container" style="position: relative;">
+              <img src="/images/hero-img-1.jpg" style="width:100%">
+              <div class="text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff;">
+                <h1 style="font-size: 36px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Spend your holiday</h1>
+                <p style="font-size: 20px; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Escape to paradise and rediscover yourself</p>
+                <div class="flex">
+                  <button class="primary-btn" style="margin: 0 auto; background-color: green; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase;">Discover More</button>
+                  <button class="secondary-btn" style="margin: 0 auto; background-color: transparent; color: #fff; border: 2px solid #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase; margin-left: 10px;">Contact Us</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      
+        <div class="mySlides">
+            <div class="numbertext">2 / 3</div>
+            <img src="/images/hero-img-2.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+      
+        <div class="mySlides">
+            <div class="numbertext">3 / 3</div>
+            <img src="/images/hero-img-3.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+      
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        <div style="text-align:center" class="my-4">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </section>
+
+    <section class="book">
+        <div class="container flex_space">
+            <div class="form">
+                <form class="grid">
+                  <h1 class="center-text"><span>Book Your Rooms</span></h1>
+                  <input type="date" placeholder="Arrival Date">
+                  <input type="date" placeholder="Departure Date">
+                  <input type="number" placeholder="Adults">
+                  <input type="submit" value="CHECK AVAILABILITY">
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about top">
+        <div class="container flex">
+          <div class="left">
+            <div class ="heading">
+              <h1>Hotel Le Process</h1>
+            </div>
+            <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed tincidunt mauris. Maecenas feugiat nibh nec arcu scelerisque, eget finibus libero condimentum. Nulla eget sagittis mauris. Duis vel mauris risus. Vitae condimentum mi ultricies. Consectetur adipisicing elit.
+              </p>
+              <button class="primary-btn about-btn">About Us</button>
+            </div>
+          </div>
+          <div class="right">
+            <img src="/images/about-section-img.jpg" alt="Hotel Services" class="professional-image">
+          </div>
+        </div>
+    </section>
+
+    <section class="counter top">
+        <div class="container">
+          <div class="box">
+            <h1>2500</h1>
+            <hr>
+            <span>Customer</span>
+          </div>
+          <div class="box">
+            <h1>1250</h1>
+            <hr>
+            <span>Happy Customer</span>
+          </div>
+          <div class="box">
+            <h1>150</h1>
+            <hr>
+            <span>Expert Technicians</span>
+          </div>
+          <div class="box">
+            <h1>3550</h1>
+            <hr>
+            <span>Desktop Repaired</span>
+          </div>
+        </div>
+    </section>
+
+    <section class="rooms">
+        <div class="container top">
+          <div class="heading">
+            <h1>EXPLORE</h1>
+            <h2>Our Rooms</h2>
+            <p>Our spacious Deluxe Room offers a comfortable retreat with modern amenities. It features a king-size bed, a private balcony with stunning views, a work desk, and a luxurious bathroom. Perfect for relaxation and rejuvenation.</p>
+          </div>
+          
+          <div class="content mtop">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div class="item">
+                <div class="image">
+                  <img src="/images/hero-img-1.jpg" alt="Room 2">
+                </div>
+                <div class="text">
+                  <h2>Deluxe Room</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$300 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image">
+                  <img src="/images/slider-img-1.jpeg" alt="Room 3">
+                </div>
+                <div class="text">
+                  <h2>Premium Suite</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$400 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image">
+                  <img src="/images/slider-img-2.jpg" alt="Room 4">
+                </div>
+                <div class="text">
+                  <h2>Family Room</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$350 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image">
+                  <img src="/images/slider-img-3.jpg" alt="Room 5">
+                </div>
+                <div class="text">
+                  <h2>Executive Suite</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$500 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image">
+                  <img src="/images/slider-img-4.jpg" alt="Room 6">
+                </div>
+                <div class="text">
+                  <h2>Deluxe Room</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$300 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image">
+                  <img src="/images/slider-img-5.jpg" alt="Room 7">
+                </div>
+                <div class="text">
+                  <h2>Premium Suite</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$400 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image">
+                  <img src="/images/slider-img-6.jpg" alt="Room 8">
+                </div>
+                <div class="text">
+                  <h2>Family Room</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$350 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="image">
+                  <img src="/images/slider-img-2.jpg" alt="Room 9">
+                </div>
+                <div class="text">
+                  <h2>Executive Suite</h2>
+                  <div class="rate flex">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="button flex">
+                    <button class="primary-btn">Book Now</button>
+                    <h3>$500 <span><br> Per Night</span></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </section>
+    
+      <section class="gallery">
+        <div class="container top">
+          <div class="heading">
+            <!-- <h1>PHOTOS</h1> -->
+            <h2>Our Gallery</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore</p>
+          </div>
+        </div>
+      
+        <div class="content mtop">
+          <div class="owl-carousel owl-carousel2 owl-theme">
+            <!-- Image 1 -->
+            <div class="items">
+              <div class="img">
+                <img src="/images/slider-img-3.jpg" alt="">
+              </div>
+              <div class="overlay">
+                <span class="fa fa-plus"></span>
+                <h3>Photo Title Here</h3>
+              </div>
+            </div>
+      
+            <!-- Image 2 -->
+            <div class="items">
+              <div class="img">
+                <img src="/images/slider-img-2.jpg" alt="">
+              </div>
+              <div class="overlay">
+                <span class="fa fa-plus"></span>
+                <h3>Photo Title Here</h3>
+              </div>
+            </div>
+      
+            <!-- Image 3 -->
+            <div class="items">
+              <div class="img">
+                <img src="/images/slider-img-3.jpg" alt="">
+              </div>
+              <div class="overlay">
+                <span class="fa fa-plus"></span>
+                <h3>Photo Title Here</h3>
+              </div>
+            </div>
+      
+            <!-- Image 4 -->
+            <div class="items">
+              <div class="img">
+                <img src="/images/slider-img-4.jpg" alt="">
+              </div>
+              <div class="overlay">
+                <span class="fa fa-plus"></span>
+                <h3>Photo Title Here</h3>
+              </div>
+            </div>
+      
+            <!-- Image 5 -->
+            <div class="items">
+              <div class="img">
+                <img src="/images/slider-img-5.jpg" alt="">
+              </div>
+              <div class="overlay">
+                <span class="fa fa-plus"></span>
+                <h3>Photo Title Here</h3>
+              </div>
+            </div>
+      
+            <!-- Image 6 -->
+            <div class="items">
+              <div class="img">
+                <img src="/images/slider-img-6.jpg" alt="">
+              </div>
+              <div class="overlay">
+                <span class="fa fa-plus"></span>
+                <h3>Photo Title Here</h3>
+              </div>
+            </div>
+      
+            <!-- More images... -->
+          </div>
+        </div>
+      </section>
+
+
+
+
+<section class="services top">
+  <div class="container">
+    <div class="heading">
+      <h1>SERVICES</h1>
+      <h2>Our Services</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore</p>
+    </div>
+
+    <div class="content flex_space">
+      <div class="left grid2">
+
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <h3>Delicious Food</h3>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-person-biking"></i>
+            <h3>Fitness</h3>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-utensils"></i>
+            <h3>In-house Restaurant</h3>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="text">
+            <i class="fa-solid fa-spa"></i>
+            <h3>Beauty Spa</h3>
+          </div>
+        </div>
+
+      </div>
+      <div class="right">
+        <img src="/images/slider-img-3.jpg" alt="Floating Image">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="customer top">
+  <div class="container">
+    <div class="owl-carousel owl-carousel3 owl-theme">
+      <div class="item">
+        <i class="fa-solid fa-quote-right"></i>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+        </p>
+        <h3>Gloria Djonret</h3>
+        <label>Gloria Djonret</label>
+      </div>
+      <div class="item">
+        <i class="fa-solid fa-quote-right"></i>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+        </p>
+        <h3>John Doe</h3>
+        <label>John Doe</label>
+      </div>
+    
+      <div class="item">
+        <i class="fa-solid fa-quote-right"></i>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
+        </p>
+        <h3>David Johnson</h3>
+        <label>David Johnson</label>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    
+
+    <%- include("partials/footer.ejs") %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>

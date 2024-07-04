@@ -1,0 +1,270 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 230px;
+    background-color: #2b3e50;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0px;
+    margin-top: -10px;
+    height: 110vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-left: 20px;
+}
+
+.sidebar-header {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px; /* Increased size */
+    color: #fff;
+    margin-bottom: -10px;
+    padding-bottom: -10px;
+    line-height: 1;
+    border-bottom: 1px solid #fff;
+    
+    width: 100%;
+    text-align: center;
+}
+
+.profile {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+
+.profile-info h3 {
+    font-size: 18px; /* Increased size */
+}
+
+.profile-info p {
+    font-size: 1px; /* Increased size */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul li {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px; /* Increased size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav ul li:hover, .active {
+    background-color: #3e5c76;
+}
+
+nav ul li i {
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-left i {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header-left input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px; /* Increased size */
+}
+
+.header-right i {
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 16px; /* Increased size */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 16px; /* Increased size */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3e5c76;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px; /* Increased size */
+}
+
+.dropdown-content a:hover {
+    background-color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content {
+    padding: 20px;
+    font-size: 16px; /* Increased size */
+}
+
+.dashboard {
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+}
+
+.breadcrumb {
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #555;
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: #888;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 0 10px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+}
+
+.card:first-child {
+    margin-left: 0;
+}
+
+.card:last-child {
+    margin-right: 0;
+}
+
+.card-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon i {
+    font-size: 30px;
+}
+
+.card-info {
+    text-align: left;
+}
+
+.card-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.card-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.card-progress {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.card-increase {
+    font-size: 14px;
+    color: #fff;
+}
+
+.blue {
+    background-color: #007bff;
+}
+
+.orange {
+    background-color: #ff9800;
+}
+
+.purple {
+    background-color: #9c27b0;
+}
+
+.green {
+    background-color: #4caf50;
+}
+
