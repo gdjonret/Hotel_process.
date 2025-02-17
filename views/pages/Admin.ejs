@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Le Process Dashboard</title>
     <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="sidebar">
+    <%- include("../partials/sidebar.ejs") %>  
+   <!-- <div class="sidebar">
         <div class="sidebar-header">
             <h2>Hotel Le Process</h2>
         </div>
@@ -19,61 +21,14 @@
         <nav>
             <ul>
                 <li class="active"><i class="fas fa-home"></i> Dashboard</li>
-                <li><i class="fas fa-envelope"></i> Email</li>
-                <li>
-                    <div class="dropdown">
-                        <span><i class="fas fa-book"></i> Booking <i class="fas fa-caret-down"></i></span>
-                        <div class="dropdown-content">
-                            <a href="#">New Booking</a>
-                            <a href="#">View Booking</a>
-                            <a href="#">Edit Booking</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown">
-                        <span><i class="fas fa-bed"></i> Rooms <i class="fas fa-caret-down"></i></span>
-                        <div class="dropdown-content">
-                            <a href="#">Add Room Details</a>
-                            <a href="#">View All Rooms</a>
-                            <a href="#">Edit Room Details</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown">
-                        <span><i class="fas fa-users"></i> Staff <i class="fas fa-caret-down"></i></span>
-                        <div class="dropdown-content">
-                            <a href="#">Add Staff Details</a>
-                            <a href="#">View All Staffs</a>
-                            <a href="#">Edit Staff Details</a>
-                        </div>
-                    </div>
-                </li>
-         
+                <li><a href="/Booking" style="color: white; text-decoration: none;"><i class="fas fa-book"></i> Booking</a></li>
+                <li><a href="/Room" style="color: white; text-decoration: none;"><i class="fas fa-bed"></i> Rooms</a></li>
+                <li><a href="/staff" style="color: white; text-decoration: none;"><i class="fas fa-users"></i> Staff </a></li>
+                
             </ul>
         </nav>
-    </div>
-    <div class="main-content">
-        <header>
-            <div class="header-left">
-                <i class="fas fa-bars"></i>
-                <input type="text" placeholder="Search...">
-            </div>
-            <div class="header-right">
-                <i class="fas fa-bell"></i>
-                <i class="fas fa-envelope"></i>
-                <i class="fas fa-user"></i>
-                <div class="dropdown">
-                    <span>John <i class="fas fa-caret-down"></i></span>
-                    <div class="dropdown-content">
-                        <a href="#">Profile</a>
-                        <a href="#">Settings</a>
-                        <a href="#">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </header>
+    </div> -->
+    
         <div class="content">
             <!-- Main content goes here -->
             <div class="dashboard">
@@ -136,7 +91,9 @@
                             <p class="card-increase">60% Increase in 2...</p>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-            
+        </div>
+    </div>
+</body>
+</html>

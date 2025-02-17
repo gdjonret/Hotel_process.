@@ -3,25 +3,54 @@ const axios = require("axios");
 const path = require("path");
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const BACKEND_URL = 'http://localhost:8080/api';
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Index page route
 app.get("/", (req, res) => {
     res.render("index");
 });
 
-// BookNow page route
-app.get("/BookNow", async (req, res) => {
+app.get("/BookNow", (req, res) => {
+    res.render("pages/BookNow");
+});
+
+// API endpoint to create a booking
+app.post("/api/bookings", async (req, res) => {
     try {
-        const response = await axios.get('http://localhost:8080/api/bookings'); // Adjust the URL to your Spring Boot endpoint
-        const bookings = response.data;
-        res.render("pages/BookNow", { bookings });
+        const bookingData = {
+            roomNumber: req.body.roomNumber,
+            checkInDate: req.body.checkin,
+            checkOutDate: req.body.checkout,
+            guestName: req.body.guestName,
+            guestEmail: req.body.guestEmail,
+            guestPhone: req.body.guestPhone,
+            totalPrice: req.body.totalPrice,
+            specialRequests: req.body.specialRequests,
+            status: 'PENDING'
+        };
+
+        const response = await axios.post(`${BACKEND_URL}/bookings`, bookingData);
+        res.json(response.data);
     } catch (error) {
-        console.error('There was an error!', error);
-        res.status(500).send('Server Error');
+        console.error('Error creating booking:', error.message);
+        res.status(500).json({ error: 'Failed to create booking' });
+    }
+});
+
+// API endpoint to get all bookings
+app.get("/api/bookings", async (req, res) => {
+    try {
+        const response = await axios.get(`${BACKEND_URL}/bookings`);
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error fetching bookings:', error.message);
+        res.status(500).json({ error: 'Failed to fetch bookings' });
     }
 });
 
@@ -30,18 +59,54 @@ app.get("/Signin", (req, res) => {
     res.render("pages/Signin");
 });
 
-// Admin page route
-app.get("/Admin", async (req, res) => {
+// Discover Chad page route
+app.get("/discover-chad", (req, res) => {
+    res.render("pages/discover-chad");
+});
+
+app.get("/Admin", (req, res) => {
+    res.render("pages/Admin");
+});
+
+app.get("/GuestDetails", (req, res) => { 
+    res.render("pages/GuestDetails");
+});
+
+app.get("/Checkout", (req, res) => { 
+    res.render("pages/Checkout");
+});
+
+// Confirmation page
+app.get('/confirmation', (req, res) => {
+    res.render('pages/confirmation');
+});
+
+app.get("/staff", async (req, res) => {
     try {
-        const response = await axios.get('http://localhost:8080/api/admin'); // Adjust the URL to your Spring Boot endpoint
-        const adminData = response.data;
-        res.render("pages/Admin", { adminData });
+        const response = await axios.get('http://localhost:8080/api/employees'); // Adjust the URL to your Spring Boot endpoint
+        const employees = response.data;
+        res.render('pages/staff', { employees });
     } catch (error) {
-        console.error('There was an error!', error);
+        console.error('Error fetching employees:', error);
         res.status(500).send('Server Error');
     }
 });
 
+app.post("/book-room", (req, res) => {
+    const { arrivalDate, departureDate, adults } = req.body;
+    
+    // Store the booking data (you can expand this later)
+    const bookingData = {
+        arrivalDate,
+        departureDate,
+        adults
+    };
+    
+    // Redirect to guest details page with query parameters
+    res.redirect(`/GuestDetails?arrival=${arrivalDate}&departure=${departureDate}&adults=${adults}`);
+});
+
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Server is listening at http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

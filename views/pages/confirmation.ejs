@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Hotel Le Process</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/BookNow.css">
+    <link rel="stylesheet" href="/css/confirmation.css">
+</head>
+<body>
+    <%- include("../partials/navbar.ejs") %>
+
+    <div class="room-image">
+        <img src="/images/h1.jpg" alt="Standard Room">
+    </div>
+
+    <div class="container">
+        <%- include("../partials/progress-steps.ejs", {currentStep: 4}) %>
+        
+        <div class="row">
+            <!-- Left Column: Booking Summary -->
+            <div class="col-md-4">
+                <div class="booking-form">
+                    <h2>Booking Summary</h2>
+                    <div class="summary-item">
+                        <span class="label">Room Type:</span>
+                        <span class="value" id="roomType">Loading...</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Check-in Date:</span>
+                        <span class="value" id="checkInDate">Loading...</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Check-out Date:</span>
+                        <span class="value" id="checkOutDate">Loading...</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Number of Nights:</span>
+                        <span class="value" id="numberOfNights">Loading...</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Number of Guests:</span>
+                        <span class="value" id="numberOfGuests">Loading...</span>
+                    </div>
+                    <div class="summary-item summary-total">
+                        <span class="label">Total Amount:</span>
+                        <span class="value" id="totalAmount">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Confirmation Details -->
+            <div class="col-md-8">
+                <div class="confirmation-container">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+
+                    <div class="confirmation-message">
+                        <h2>Booking Confirmed!</h2>
+                        <p>Thank you for choosing Hotel Le Process. Your booking has been successfully confirmed.</p>
+                    </div>
+
+                    <div class="booking-reference">
+                        <h4>Booking Reference: <span id="bookingReference">Loading...</span></h4>
+                    </div>
+
+                    <div class="booking-details">
+                        <h3 class="mb-4">Booking Details</h3>
+                        
+                        <!-- Room Details -->
+                        <div class="detail-group">
+                            <div class="detail-label"><i class="fas fa-bed"></i> Room Type</div>
+                            <div class="detail-value" id="confirmRoomType">Loading...</div>
+                        </div>
+
+                        <!-- Stay Duration -->
+                        <div class="detail-group">
+                            <div class="detail-label"><i class="fas fa-calendar"></i> Stay Duration</div>
+                            <div class="detail-value">
+                                Check-in: <span id="checkIn">Loading...</span><br>
+                                Check-out: <span id="checkOut">Loading...</span>
+                            </div>
+                        </div>
+
+                        <!-- Guest Details -->
+                        <div class="detail-group">
+                            <div class="detail-label"><i class="fas fa-user"></i> Guest Information</div>
+                            <div class="detail-value">
+                                Name: <span id="guestName">Loading...</span><br>
+                                Email: <span id="guestEmail">Loading...</span><br>
+                                Phone: <span id="guestPhone">Loading...</span>
+                            </div>
+                        </div>
+
+                        <!-- Price Summary -->
+                        <div class="detail-group">
+                            <div class="detail-label"><i class="fas fa-receipt"></i> Price Summary</div>
+                            <div class="detail-value">
+                                Room Rate: <span id="roomRate">Loading...</span><br>
+                                Total Amount: <span id="confirmTotalAmount">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>Next Steps</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> A confirmation email has been sent to your email address</li>
+                            <li><i class="fas fa-clock"></i> Check-in time starts from 2:00 PM on your arrival date</li>
+                            <li><i class="fas fa-id-card"></i> Please bring a valid ID and the credit card used for booking</li>
+                            <li><i class="fas fa-phone"></i> For any questions, contact us at +235 22 53 45 85</li>
+                        </ul>
+                    </div>
+
+                    <div class="button-group">
+                        <button onclick="returnToHomepage()" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Return to Homepage
+                        </button>
+                        <button onclick="printConfirmation()" class="btn btn-secondary">
+                            <i class="fas fa-print"></i> Print Confirmation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/js/booking-utils.js"></script>
+    <script src="/js/confirmation.js"></script>
+</body>
+</html>

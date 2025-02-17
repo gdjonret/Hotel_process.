@@ -23,8 +23,12 @@
                 <h1 style="font-size: 36px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Spend your holiday</h1>
                 <p style="font-size: 20px; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Escape to paradise and rediscover yourself</p>
                 <div class="flex">
-                  <button class="primary-btn" style="margin: 0 auto; background-color: green; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase;">Discover More</button>
-                  <button class="secondary-btn" style="margin: 0 auto; background-color: transparent; color: #fff; border: 2px solid #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase; margin-left: 10px;">Contact Us</button>
+                  <a href="/discover-chad" style="text-decoration: none;">
+                    <button class="primary-btn" style="margin: 0 auto; background-color: green; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase;">Discover More</button>
+                  </a>
+                  <a href="#contact" style="text-decoration: none;">
+                    <button class="secondary-btn" style="margin: 0 auto; background-color: transparent; color: #fff; border: 2px solid #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase; margin-left: 10px;">Contact Us</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -54,18 +58,18 @@
     <section class="book">
         <div class="container flex_space">
             <div class="form">
-                <form class="grid">
-                  <h1 class="center-text"><span>Book Your Rooms</span></h1>
-                  <input type="date" placeholder="Arrival Date">
-                  <input type="date" placeholder="Departure Date">
-                  <input type="number" placeholder="Adults">
-                  <input type="submit" value="CHECK AVAILABILITY">
+                <form class="grid" id="availabilityForm">
+                    <h1 class="center-text"><span>Book Your Rooms</span></h1>
+                    <input type="date" name="arrivalDate" id="arrivalDate" required>
+                    <input type="date" name="departureDate" id="departureDate" required>
+                    <input type="number" name="adults" id="adults" placeholder="Adults" min="1" max="4" required>
+                    <input type="submit" value="CHECK AVAILABILITY">
                 </form>
             </div>
         </div>
     </section>
     
-    <section class="about top">
+    <section class="about top" id="about">
         <div class="container flex">
           <div class="left">
             <div class ="heading">
@@ -75,7 +79,9 @@
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed tincidunt mauris. Maecenas feugiat nibh nec arcu scelerisque, eget finibus libero condimentum. Nulla eget sagittis mauris. Duis vel mauris risus. Vitae condimentum mi ultricies. Consectetur adipisicing elit.
               </p>
-              <button class="primary-btn about-btn">About Us</button>
+             <!-- <a href="/about-us">-->
+                <button class="primary-btn about-btn">About Us</button>
+              </a>
             </div>
           </div>
           <div class="right">
@@ -134,7 +140,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$300 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -154,7 +160,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$400 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -174,7 +180,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$350 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -194,7 +200,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$500 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -214,7 +220,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$300 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -234,7 +240,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$400 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -254,7 +260,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$350 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -274,7 +280,7 @@
                   </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <div class="button flex">
-                    <button class="primary-btn">Book Now</button>
+                    <a href="/BookNow"><button class="primary-btn">Book Now</button></a>
                     <h3>$500 <span><br> Per Night</span></h3>
                   </div>
                 </div>
@@ -468,4 +474,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/js/script.js"></script>
+    <script>
+        // Set minimum date for arrival date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelector('input[name="arrivalDate"]').min = today;
+        
+        // Update departure date minimum when arrival date is selected
+        document.querySelector('input[name="arrivalDate"]').addEventListener('change', function() {
+            document.querySelector('input[name="departureDate"]').min = this.value;
+        });
+    </script>
+    <script>
+        document.getElementById('availabilityForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Store the form data
+            const arrivalDate = document.getElementById('arrivalDate').value;
+            const departureDate = document.getElementById('departureDate').value;
+            const adults = document.getElementById('adults').value;
+            
+            // Store in session storage
+            sessionStorage.setItem('checkin', arrivalDate);
+            sessionStorage.setItem('checkout', departureDate);
+            sessionStorage.setItem('guests', adults);
+            
+            // Redirect to book now page
+            window.location.href = '/BookNow';
+        });
+    </script>
+    <script>
+        // Smooth scroll for Contact Us button
+        document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
+</html>

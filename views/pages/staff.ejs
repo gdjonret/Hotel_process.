@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Le Process Dashboard</title>
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/staff.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <%- include("../partials/sidebar.ejs") %> 
+
+    <!-- Add Employee Button -->
+    <div class="container mt-5">
+        <div class="add-employee-btn">
+            <button id="addEmployeeBtn" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add Employee
+            </button>
+        </div>
+
+        <!-- Employee Table -->
+        <div class="employee-table-container">
+            <table class="employee-table">
+                <thead>
+                    <tr>
+                        <th class="checkbox-container"><input type="checkbox"></th>
+                        <th>Employee Name</th>
+                        <th>Role</th>
+                        <th>Schedule</th>
+                        <th>Contact</th>
+                        <th>Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (employees.length > 0) { %>
+                        <% employees.forEach(employee => { %>
+                            <tr>
+                                <td class="checkbox-container"><input type="checkbox"></td>
+                                <td>
+                                    <div class="ms-3">
+                                        <span class="employee-name"><%= employee.name %></span>
+                                        <br><small>Join on <%= employee.joinDate %></small>
+                                    </div>
+                                </td>
+                                <td><%= employee.role %></td>
+                                <td>
+                                    <% if (employee.schedule && Array.isArray(employee.schedule)) { %>
+                                        <% employee.schedule.forEach(schedule => { %>
+                                            <span class="employee-schedule"><%= schedule.day %></span><br>
+                                            <small><%= schedule.startTime %> – <%= schedule.endTime %></small><br>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <span>No schedule available</span>
+                                    <% } %>
+                                </td>
+                                <td><i class="fas fa-phone-alt employee-contact"></i> <%= employee.contact %></td>
+                                <td class="employee-salary"><%= employee.salary %></td>
+                                <td class="actions"><i class="fas fa-ellipsis-v"></i></td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="7">No employees found.</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="addEmployeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Employee</h2>
+            <form>
+                <div class="form-group">
+                    <label for="employeeName">Employee Name</label>
+                    <input type="text" id="employeeName" name="employeeName" placeholder="Enter employee name">
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" id="role" name="role" placeholder="Enter employee role">
+                </div>
+                <div class="form-group">
+                    <label for="day1">Day</label>
+                    <input type="text" id="day1" name="day1" placeholder="Enter day (e.g., Monday)">
+                </div>
+                <div class="form-group">
+                    <label for="startTime1">Start Time</label>
+                    <input type="time" id="startTime1" name="startTime1">
+                </div>
+                <div class="form-group">
+                    <label for="endTime1">End Time</label>
+                    <input type="time" id="endTime1" name="endTime1">
+                </div>
+                <div class="form-group">
+                    <label for="joinDate">Join Date</label>
+                    <input type="date" id="joinDate" name="joinDate" placeholder="Enter join date">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="text" id="contact" name="contact" placeholder="Enter employee contact">
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="text" id="salary" name="salary" placeholder="Enter employee salary">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Correctly include the external JS file -->
+    <script src="/js/staff.js"></script>
+</body>
+</html>

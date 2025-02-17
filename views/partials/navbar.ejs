@@ -1,4 +1,3 @@
-
 </head>
 <body>
 <div class="navbar">
@@ -23,7 +22,7 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/" class="nav-link px-2 text-dark">Home</a></li>
                 <li><a href="/" class="nav-link px-2 text-dark">Articles</a></li>
-                <li><a href="/" class="nav-link px-2 text-dark">About</a></li>
+                <li><a href="/#about" class="nav-link px-2 text-dark">About</a></li>
             </ul>
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 <div class="input-group">
@@ -34,7 +33,7 @@
                 </div>
             </form>
             <a href="BookNow">
-                <button type="button" class="btn">Book Now</button>
+                <button type="button" class="btn" onclick="sessionStorage.clear()">Book Now</button>
             </a>
             <div class="auth-links">
                
@@ -108,14 +107,33 @@
         color: #333; /* Dark text for links */
     }
 
+    /* Control the size of the search bar */
+    .navbar-custom .input-group {
+        width: 200px;
+    }
+
+    .navbar-custom .form-control {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    /* Style the search button and Book Now button consistently */
     .navbar-custom .btn {
         background-color: green;
         color: white;
+        height: 35px;
+        padding: 0 15px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .navbar-custom .input-group .btn {
         background-color: green;
         color: white;
+        height: 35px;
+        padding: 0 10px;
     }
 
     .hidden {
