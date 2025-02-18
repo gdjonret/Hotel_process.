@@ -1,22 +1,20 @@
 <!-- Progress Steps -->
 <div class="steps">
     <div class="step" id="step1">
-        <span class="circle <%= currentStep > 1 ? 'completed' : currentStep == 1 ? 'active' : '' %>">1</span>
+        <span class="circle <%= currentStep > 1 ? 'completed' : currentStep == 1 ? 'active' : '' %>"><%= currentStep > 1 ? '✓' : '' %></span>
         <p>SELECT ROOM</p>
     </div>
     <div class="step" id="step2">
-        <span class="circle <%= currentStep > 2 ? 'completed' : currentStep == 2 ? 'active' : '' %>">2</span>
+        <span class="circle <%= currentStep > 2 ? 'completed' : currentStep == 2 ? 'active' : '' %>"><%= currentStep > 2 ? '✓' : '' %></span>
         <p>GUEST DETAILS</p>
     </div>
     <div class="step" id="step3">
-        <span class="circle <%= currentStep > 3 ? 'completed' : currentStep == 3 ? 'active' : '' %>">3</span>
+        <span class="circle <%= currentStep > 3 ? 'completed' : currentStep == 3 ? 'active' : '' %>"><%= currentStep > 3 ? '✓' : '' %></span>
         <p>CHECKOUT</p>
     </div>
     <div class="step" id="step4">
-        <span class="circle <%= currentStep == 4 ? 'active' : '' %>">4</span>
+        <span class="circle <%= currentStep >= 4 ? 'completed' : '' %>"><%= currentStep >= 4 ? '✓' : '' %></span>
         <p>CONFIRMATION</p>
     </div>
-    <div class="progress-bar">
-        <span class="indicator" style="width: <%= ((currentStep - 1) / 3) * 100 %>%;"></span>
-    </div>
+    <div class="progress-bar"></div>
 </div>

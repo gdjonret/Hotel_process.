@@ -1,104 +1,164 @@
+/* Base styles and font imports */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+:root {
+    --primary-color: #00a651;
+    --secondary-color: #7fc142;
+    --text-color: #333;
+    --light-text: #f2f2f2;
+    --dark-bg: rgba(0, 0, 0, 0.8);
+    --transition-speed: 0.3s;
+    --section-padding: 4rem 0;
+    --container-width: 1200px;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 html {
     scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for rem units */
 }
 
 body {
-    font-family: Verdana, sans-serif;
-    
+    font-family: 'Poppins', Verdana, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Slideshow container */
+/* Container styles */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hero section styles */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+
 .slideshow-container {
-    max-width: 1800px;
+    max-width: 100%;
     position: relative;
     margin: auto;
+    height: 100%;
 }
 
 .mySlides {
     position: relative;
     text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
-/* Use this to get the same size for all pics*/
 .mySlides img {
     width: 100%;
-    /*638*/
-    height: 638px;
+    height: 100%;
     object-fit: cover;
+    vertical-align: middle;
 }
 
-/* Next & previous buttons */
+/* Navigation buttons */
 .prev,
 .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
+    padding: 1rem;
+    margin-top: -1.375rem;
+    color: var(--light-text);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: all var(--transition-speed) ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
     transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Caption text */
+/* Hero text and indicators */
 .hero .text {
-    color: #f2f2f2;
-    font-size: 17px;
-    padding: 8px 12px;
     position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.hero .numbertext {
-    color: #fff;
-    font-size: 14px;
-    padding: 8px 12px;
-    position: absolute;
-    z-index: 5;
     bottom: 0;
-    background: #000;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+    color: var(--light-text);
 }
 
-/* The dots/bullets/indicators */
+.hero .text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero .text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero .numbertext {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--light-text);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    z-index: 2;
+}
+
+.hero .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 3;
+}
+
 .hero .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
+    transition: background-color var(--transition-speed) ease;
 }
 
 .hero .active,
 .hero .dot:hover {
-    background-color: #717171;
+    background-color: var(--light-text);
 }
 
 .center-text {
@@ -212,10 +272,8 @@ section.about.top .professional-image {
 .counter .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* Added the grid-template-columns value */
     text-align: center;
     align-items: center;
-    /* Changed place-items to align-items */
     padding-top: 60px;
 }
 
@@ -289,12 +347,18 @@ section.about.top .professional-image {
 }
 
 .rooms .content .item .rate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
     margin-bottom: 10px;
 }
 
 .rooms .content .item .rate i {
     color: #7fc142;
-    margin-right: 5px;
+    font-size: 18px;
 }
 
 .rooms .content .item p {
@@ -542,6 +606,19 @@ section.about.top .professional-image {
   color:#fff;
   text-align:center ;
 }
+
+@media screen and (max-width: 768px) {
+    .customer {
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .customer {
+        height: 100vh;
+    }
+}
+
 .customer .container{
   max-width: 70%;
 }      
@@ -895,4 +972,149 @@ section.about.top .professional-image {
     .quick-links a:hover {
         transform: translateY(-2px);
     }
+}
+
+@media (max-width: 1200px) {
+    .book .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .book .grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .book .grid {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .book .grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .counter {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services .right img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .services .box {
+        padding: 15px;
+    }
+
+    .services .box i {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .services .box h3 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services .content {
+        grid-template-columns: 1fr;
+    }
+
+    .services .box {
+        padding: 10px;
+    }
+
+    .services .box i {
+        font-size: 25px;
+    }
+
+    .services .box h3 {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .mySlides img {
+        height: 60vh;
+    }
+
+    .prev,
+    .next {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .mySlides img {
+        height: 70vh;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .hero .prev,
+    .hero .next,
+    .hero .dot {
+        display: none;
+    }
+}
+
+/* Vendor prefixes for better browser compatibility */
+.mySlides img {
+    -webkit-object-fit: cover;
+       -moz-object-fit: cover;
+            object-fit: cover;
+}
+
+.prev,
+.next {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-transition: all var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
 }

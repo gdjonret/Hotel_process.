@@ -5,9 +5,23 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 const BACKEND_URL = 'http://localhost:8080/api';
+const isProduction = process.env.NODE_ENV === 'production';
 
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve static files with caching in production
+if (isProduction) {
+    const staticOptions = {
+        maxAge: '1y',
+        etag: true,
+        lastModified: true
+    };
+    app.use('/css', express.static(path.join(__dirname, 'public/css/dist'), staticOptions));
+    app.use(express.static(path.join(__dirname, 'public'), staticOptions));
+} else {
+    app.use(express.static(path.join(__dirname, 'public')));
+}
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

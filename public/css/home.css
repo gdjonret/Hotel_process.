@@ -1,0 +1,125 @@
+/* Hero Section */
+.hero {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+}
+
+.hero .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.primary-btn {
+    margin: 0 auto;
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-btn {
+    margin: 0 auto;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: darkgreen;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}

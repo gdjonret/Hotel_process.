@@ -6,7 +6,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         const selectedRoom = JSON.parse(localStorage.getItem('selectedRoom') || '{}');
 
         // Generate booking reference
-        const bookingRef = 'HLP' + Date.now().toString().slice(-6) + Math.random().toString(36).substring(2, 5).toUpperCase();
+        const timestamp = Date.now();
+        const year = new Date(timestamp).getFullYear().toString().slice(-2);
+        const month = (new Date(timestamp).getMonth() + 1).toString().padStart(2, '0');
+        const day = new Date(timestamp).getDate().toString().padStart(2, '0');
+        const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+        const bookingRef = `HLP${year}${month}${day}-${random}`;
         document.getElementById('bookingReference').textContent = bookingRef;
 
         // Calculate nights and total
@@ -37,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Prepare booking data for backend
         const bookingData = {
+            bookingReference: bookingRef,
             roomNumber: bookingDetails.roomType,
             checkInDate: bookingDetails.checkIn,
             checkOutDate: bookingDetails.checkOut,
@@ -78,9 +84,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 },
                 body: JSON.stringify({
                     id: result.id,
+                    bookingReference: bookingRef,
                     guestEmail: guestDetails.email,
                     guestName: `${guestDetails.firstName} ${guestDetails.lastName}`,
-                    roomNumber: bookingDetails.roomType,
+                    roomType: bookingDetails.roomType,  
                     checkInDate: formatToLocalDateTime(bookingDetails.checkIn),
                     checkOutDate: formatToLocalDateTime(bookingDetails.checkOut),
                     totalPrice: total
@@ -96,7 +103,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
         
         // Update confirmation page with booking details
-        document.getElementById('bookingReference').textContent = result.id || 'BOOKING-' + Date.now();
+        document.getElementById('bookingReference').textContent = bookingRef;
         document.getElementById('roomType').textContent = bookingDetails.roomType;
         document.getElementById('confirmRoomType').textContent = bookingDetails.roomType;
         document.getElementById('checkInDate').textContent = formatDate(bookingDetails.checkIn);
@@ -140,8 +147,19 @@ function returnToHomepage() {
 
 // Helper function to format dates
 function formatDate(dateString) {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-US', options);
+    if (!dateString) return null;
+    // Split the date string and create a new date using components
+    const [year, month, day] = dateString.split('-').map(num => parseInt(num, 10));
+    // Create date using UTC to avoid timezone issues
+    const date = new Date(Date.UTC(year, month - 1, day));
+    
+    return new Intl.DateTimeFormat('en-US', { 
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        timeZone: 'UTC'  // Ensure we use UTC for consistent date display
+    }).format(date);
 }
 
 // Helper function to calculate nights

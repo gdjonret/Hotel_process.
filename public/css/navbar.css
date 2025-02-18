@@ -1,0 +1,289 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styles for the first navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.contact-info {
+    font-size: 14px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-icons a:hover {
+    color: #aaa;
+}
+
+/* Styles for the second navbar */
+.navbar-custom {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.hotel-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #2d6a4f;
+    white-space: nowrap;
+}
+
+.navbar-custom .nav-link {
+    color: #333;
+    padding: 8px 15px;
+}
+
+/* Search form styles */
+.navbar-custom .input-group {
+    width: 200px;
+}
+
+.navbar-custom .form-control {
+    height: 35px;
+    font-size: 14px;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+}
+
+.navbar-custom .form-control:focus,
+.form-control:focus,
+.form-control-dark:focus {
+    border-color: green !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.form-control-dark {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+}
+
+/* Button styles */
+.navbar-custom .btn {
+    background-color: green !important;
+    color: white !important;
+    height: 35px;
+    padding: 0 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+
+.navbar-custom a {
+    text-decoration: none !important;
+}
+
+.navbar-custom .btn:hover,
+.navbar-custom .btn:focus,
+.navbar-custom .btn:active {
+    background-color: darkgreen !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+/* Main content spacing */
+.content {
+    margin-top: 100px; /* Default for desktop */
+    transition: margin-top 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .navbar-custom {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .navbar-custom .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        flex-wrap: nowrap;
+    }
+
+    .hotel-logo {
+        font-size: 20px;
+        margin: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Hide search bar, social icons and contact link on non-desktop */
+    .navbar-custom .search-form,
+    .social-icons,
+    .navbar-custom .nav-link[href="/#contact"] {
+        display: none !important;
+    }
+
+    .navbar-custom .nav {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+        padding: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .navbar-custom .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navbar-custom .nav-link {
+        padding: 6px 8px;
+        font-size: 13px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .navbar-custom .btn {
+        padding: 0 12px;
+        height: 35px;
+        font-size: 13px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar {
+        padding: 5px 10px;
+    }
+
+    .contact-info {
+        font-size: 12px;
+    }
+
+    .navbar-custom {
+        padding: 8px 10px;
+        top: 35px;
+    }
+
+    .hotel-logo {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar {
+        flex-direction: column;
+        padding: 5px;
+        height: auto;
+    }
+
+    .contact-info {
+        font-size: 11px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .navbar-custom {
+        top: 50px;
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .navbar-custom .container {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        height: 100%;
+    }
+
+    .hotel-logo {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .navbar-custom .nav {
+        margin: 0 10px;
+    }
+
+    .navbar-custom .btn {
+        padding: 0 10px;
+        font-size: 12px;
+        height: 30px;
+        white-space: nowrap;
+    }
+
+    .content {
+        margin-top: 160px;
+    }
+}
+
+/* Scroll behavior */
+.navbar-scroll {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-scroll {
+        top: 0;
+    }
+    
+    .top-bar-hidden {
+        transform: translateY(-100%);
+    }
+    
+    body.scrolled .content {
+        margin-top: 70px;
+    }
+}
+
+/* Fix for iOS notch */
+@supports (padding: max(0px)) {
+    .navbar,
+    .navbar-custom {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+        padding-top: max(10px, env(safe-area-inset-top));
+    }
+}

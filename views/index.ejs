@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <title>Home Page</title>
 </head>
 <body>
@@ -17,38 +19,53 @@
     <section class="hero">
         <div class="mySlides">
             <div class="numbertext">1 / 3</div>
-            <div class="image-container" style="position: relative;">
-              <img src="/images/hero-img-1.jpg" style="width:100%">
-              <div class="text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff;">
-                <h1 style="font-size: 36px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Spend your holiday</h1>
-                <p style="font-size: 20px; font-style: italic; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Escape to paradise and rediscover yourself</p>
+            <img src="/images/hero-img-1.jpg" alt="Hotel Le Process">
+            <div class="text">
+                <h1>Welcome to Hotel Le Process</h1>
+                <p>Experience luxury and comfort in the heart of N'Djamena</p>
                 <div class="flex">
-                  <a href="/discover-chad" style="text-decoration: none;">
-                    <button class="primary-btn" style="margin: 0 auto; background-color: green; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase;">Discover More</button>
-                  </a>
-                  <a href="#contact" style="text-decoration: none;">
-                    <button class="secondary-btn" style="margin: 0 auto; background-color: transparent; color: #fff; border: 2px solid #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; text-transform: uppercase; margin-left: 10px;">Contact Us</button>
-                  </a>
+                    <a href="/discover-chad">
+                        <button class="primary-btn">Discover More</button>
+                    </a>
+                    <a href="#contact">
+                        <button class="secondary-btn">Contact Us</button>
+                    </a>
                 </div>
-              </div>
             </div>
         </div>
       
         <div class="mySlides">
             <div class="numbertext">2 / 3</div>
-            <img src="/images/hero-img-2.jpg" style="width:100%">
-            <div class="text">Caption Two</div>
+            <img src="/images/hero-img-2.jpg" alt="Luxurious Rooms">
+            <div class="text">
+                <h1>Luxurious Accommodations</h1>
+                <p>Elegant rooms designed for your comfort</p>
+                <div class="flex">
+                    <a href="/BookNow">
+                        <button class="primary-btn">Book Now</button>
+                    </a>
+                </div>
+            </div>
         </div>
       
         <div class="mySlides">
             <div class="numbertext">3 / 3</div>
-            <img src="/images/hero-img-3.jpg" style="width:100%">
-            <div class="text">Caption Three</div>
+            <img src="/images/hero-img-3.jpg" alt="Premium Services">
+            <div class="text">
+                <h1>Premium Services</h1>
+                <p>Dedicated to exceeding your expectations</p>
+                <div class="flex">
+                    <a href="#services">
+                        <button class="primary-btn">Our Services</button>
+                    </a>
+                </div>
+            </div>
         </div>
       
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
-        <div style="text-align:center" class="my-4">
+        
+        <div class="dots">
             <span class="dot" onclick="currentSlide(1)"></span> 
             <span class="dot" onclick="currentSlide(2)"></span> 
             <span class="dot" onclick="currentSlide(3)"></span> 
@@ -77,7 +94,7 @@
             </div>
             <div class="content">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed tincidunt mauris. Maecenas feugiat nibh nec arcu scelerisque, eget finibus libero condimentum. Nulla eget sagittis mauris. Duis vel mauris risus. Vitae condimentum mi ultricies. Consectetur adipisicing elit.
+                Welcome to Hotel Le Process, your premier destination for luxury and comfort in the heart of the city. Our elegant establishment combines modern amenities with exceptional service to create an unforgettable stay experience. Whether you're traveling for business or leisure, our dedicated staff ensures your comfort and satisfaction throughout your stay. Featuring spacious rooms, fine dining options, and state-of-the-art facilities, we provide everything you need for a memorable hotel experience.
               </p>
              <!-- <a href="/about-us">-->
                 <button class="primary-btn about-btn">About Us</button>
@@ -93,24 +110,24 @@
     <section class="counter top">
         <div class="container">
           <div class="box">
-            <h1>2500</h1>
+            <h1>5000+</h1>
             <hr>
-            <span>Customer</span>
+            <span>Guests Served</span>
           </div>
           <div class="box">
-            <h1>1250</h1>
+            <h1>98%</h1>
             <hr>
-            <span>Happy Customer</span>
+            <span>Guest Satisfaction</span>
           </div>
           <div class="box">
-            <h1>150</h1>
+            <h1>50+</h1>
             <hr>
-            <span>Expert Technicians</span>
+            <span>Comfortable Rooms</span>
           </div>
           <div class="box">
-            <h1>3550</h1>
+            <h1>15+</h1>
             <hr>
-            <span>Desktop Repaired</span>
+            <span>Years of Excellence</span>
           </div>
         </div>
     </section>
@@ -429,14 +446,9 @@
     <div class="owl-carousel owl-carousel3 owl-theme">
       <div class="item">
         <i class="fa-solid fa-quote-right"></i>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
-          Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incid
-        </p>
-        <h3>Gloria Djonret</h3>
-        <label>Gloria Djonret</label>
+        <p>A great hotel with helpful staff and owner. They picked me up and dropped me off at the airport and arranged a driver to drive me around. Restaurant also had affordable and tasty food.</p>
+        <h3>Huot Iv</h3>
+        <label>Huot Iv</label>
       </div>
       <div class="item">
         <i class="fa-solid fa-quote-right"></i>
@@ -511,5 +523,7 @@
             });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/navbar.js"></script>
 </body>
 </html>
